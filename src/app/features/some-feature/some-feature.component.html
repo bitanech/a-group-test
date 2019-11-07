@@ -8,8 +8,10 @@
   <div class="feature-items">
     <div class="feature-item" *ngFor="let item of filteredData | async">
       <div class="feature-item__img">
-        <img src="https://picsum.photos/816/546" alt="Item image">
-        <p class="feature-item__title">{{item.name}}</p>
+        <div class="feature-item__img-wr">
+          <img src="https://picsum.photos/1000/1000" alt="Item image">
+          <p class="feature-item__title">{{item.name}}</p>
+        </div>
       </div>
       <div class="feature-item__text-wr">
         <p>Some title</p>
