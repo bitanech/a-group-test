@@ -1,0 +1,23 @@
+<div class="feature-container">
+  <div class="feature-filter">
+    <app-feature-filter
+      (formChange)="filterChange($event)"
+      [data]="this.data | async">
+    </app-feature-filter>
+  </div>
+  <div class="feature-items">
+    <div class="feature-item" *ngFor="let item of filteredData | async">
+      <div class="feature-item__img">
+        <img src="https://picsum.photos/816/546" alt="Item image">
+        <p class="feature-item__title">{{item.name}}</p>
+      </div>
+      <div class="feature-item__text-wr">
+        <p>Some title</p>
+        <div class="feature-item__text-footer">
+          <p class="feature-item__text-category">{{getCategoryName(item.category)}}</p>
+          <p class="feature-item__text-category">{{item.price}}$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

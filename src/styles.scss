@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+// Fonts
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+@import "assets/styles/slider";
+@import "~@ng-select/ng-select/themes/default.theme.css";

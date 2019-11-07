@@ -1,0 +1,38 @@
+<form [formGroup]="form" (submit)="submit()">
+  <div class="filter-city">
+    <h3 class="filter-title">city</h3>
+    <ng-select [searchable]="false" formControlName="city" placeholder="Select city">
+      <ng-option *ngFor="let city of cities" [value]="city.id">{{city.name}}</ng-option>
+    </ng-select>
+  </div>
+  <div class="filter-categories">
+    <h3 class="filter-title">categories</h3>
+    <label
+      [for]="'check-'+i"
+      *ngFor="let category of form.get('categories').controls; let i = index">
+      <input type="checkbox"
+             [id]="'check-'+i"
+             (change)="categoryChange(i)"
+             [value]="category.value.selected">
+      {{category.value.name}} ({{checkCategoryNumbers(category.value.id)}})
+    </label>
+  </div>
+  <div class="filter-price">
+    <h3 class="filter-title">price</h3>
+    <mv-slider
+      [(value)]="sliderValue"
+      [min]="minPrice"
+      [max]="maxPrice"
+      [enabled]="true"
+      [range]="true"
+      [step]="1"
+      (change)="sliderChange($event)">
+    </mv-slider>
+
+    <div class="filter-price-bottom">
+      <p>{{sliderValue[0]}}$ - {{sliderValue[1]}}$</p>
+      <button class="filter-btn">Filter</button>
+    </div>
+  </div>
+</form>
+
